@@ -8,15 +8,26 @@
 
 import UIKit
 import CoreData
+import Swinject
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var appCoordinator: AppCoordinator?
+    var defaultContainer: DefaultContainer!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+
+        let window = UIWindow(frame: UIScreen.main.bounds)
+
+        self.defaultContainer = DefaultContainer()
+        self.appCoordinator = AppCoordinator(window: window,
+                                             container: self.defaultContainer.container)
+        self.appCoordinator?.start()
+        self.window = window
+        self.window?.makeKeyAndVisible()
         return true
     }
 

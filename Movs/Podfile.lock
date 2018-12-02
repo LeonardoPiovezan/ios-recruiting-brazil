@@ -1,3 +1,20 @@
-PODFILE CHECKSUM: 713567dac61ab8192d5b70d75cb39763b207fb28
+PODS:
+  - SnapKit (4.0.1)
+  - Swinject (2.5.0)
+
+DEPENDENCIES:
+  - SnapKit (~> 4.0.0)
+  - Swinject
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - SnapKit
+    - Swinject
+
+SPEC CHECKSUMS:
+  SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
+  Swinject: 82cdb851f63f91bba974e3eca1d69780f2f7677e
+
+PODFILE CHECKSUM: c0b37dfb14dcbad64e257f7301fcdbe576248985
 
 COCOAPODS: 1.5.3

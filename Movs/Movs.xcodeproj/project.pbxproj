@@ -13,6 +13,13 @@
 		1A1F9F9E21B324F800A3CAB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A1F9F9C21B324F800A3CAB5 /* LaunchScreen.storyboard */; };
 		1A1F9FA921B324F800A3CAB5 /* MovsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F9FA821B324F800A3CAB5 /* MovsTests.swift */; };
 		1A1F9FB421B324F800A3CAB5 /* MovsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F9FB321B324F800A3CAB5 /* MovsUITests.swift */; };
+		1A1F9FCA21B3648200A3CAB5 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F9FC921B3648200A3CAB5 /* SplashView.swift */; };
+		1A1F9FCC21B3652300A3CAB5 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F9FCB21B3652300A3CAB5 /* SplashScreen.swift */; };
+		1A1F9FD021B3702700A3CAB5 /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F9FCF21B3702700A3CAB5 /* CodeView.swift */; };
+		1A1F9FD321B3705000A3CAB5 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F9FD221B3705000A3CAB5 /* Coordinator.swift */; };
+		1A1F9FD521B3706700A3CAB5 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F9FD421B3706700A3CAB5 /* AppCoordinator.swift */; };
+		1A1F9FD821B3714F00A3CAB5 /* DefaultContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F9FD721B3714F00A3CAB5 /* DefaultContainer.swift */; };
+		1A1F9FDA21B3718F00A3CAB5 /* DefaultContainer+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F9FD921B3718F00A3CAB5 /* DefaultContainer+Views.swift */; };
 		C19850F17149268A36C5249F /* Pods_MovsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8661C5D02A93394D55BF9DC /* Pods_MovsUITests.framework */; };
 		D2FDE3A3AB2799DD9688441E /* Pods_MovsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833E3099FF682CFBD7371C3B /* Pods_MovsTests.framework */; };
 		FE1D1894748524791773629D /* Pods_Movs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE57AC28B50DF802A07B8C94 /* Pods_Movs.framework */; };
@@ -49,6 +56,13 @@
 		1A1F9FAF21B324F800A3CAB5 /* MovsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A1F9FB321B324F800A3CAB5 /* MovsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovsUITests.swift; sourceTree = "<group>"; };
 		1A1F9FB521B324F800A3CAB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A1F9FC921B3648200A3CAB5 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		1A1F9FCB21B3652300A3CAB5 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		1A1F9FCF21B3702700A3CAB5 /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
+		1A1F9FD221B3705000A3CAB5 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		1A1F9FD421B3706700A3CAB5 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		1A1F9FD721B3714F00A3CAB5 /* DefaultContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultContainer.swift; sourceTree = "<group>"; };
+		1A1F9FD921B3718F00A3CAB5 /* DefaultContainer+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DefaultContainer+Views.swift"; sourceTree = "<group>"; };
 		460F816F5D02E3576B8082AF /* Pods-MovsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MovsTests/Pods-MovsTests.release.xcconfig"; sourceTree = "<group>"; };
 		4CDEAD492B76C658C350F181 /* Pods-Movs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Movs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Movs/Pods-Movs.debug.xcconfig"; sourceTree = "<group>"; };
 		631B436E98C0941CD7447B80 /* Pods-MovsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MovsUITests/Pods-MovsUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -112,9 +126,12 @@
 		1A1F9F8F21B324F400A3CAB5 /* Movs */ = {
 			isa = PBXGroup;
 			children = (
+				1A1F9FD621B370A700A3CAB5 /* Container */,
+				1A1F9FD121B3704200A3CAB5 /* Coordinator */,
+				1A1F9FCE21B3700F00A3CAB5 /* CodeView */,
+				1A1F9FC721B3640D00A3CAB5 /* Modules */,
 				1A1F9F9021B324F400A3CAB5 /* AppDelegate.swift */,
 				1A1F9F9A21B324F800A3CAB5 /* Assets.xcassets */,
-				1A1F9F9C21B324F800A3CAB5 /* LaunchScreen.storyboard */,
 				1A1F9F9F21B324F800A3CAB5 /* Info.plist */,
 				1A1F9F9721B324F400A3CAB5 /* Movs.xcdatamodeld */,
 			);
@@ -137,6 +154,50 @@
 				1A1F9FB521B324F800A3CAB5 /* Info.plist */,
 			);
 			path = MovsUITests;
+			sourceTree = "<group>";
+		};
+		1A1F9FC721B3640D00A3CAB5 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				1A1F9FC821B3641F00A3CAB5 /* SplashScreen */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		1A1F9FC821B3641F00A3CAB5 /* SplashScreen */ = {
+			isa = PBXGroup;
+			children = (
+				1A1F9F9C21B324F800A3CAB5 /* LaunchScreen.storyboard */,
+				1A1F9FC921B3648200A3CAB5 /* SplashView.swift */,
+				1A1F9FCB21B3652300A3CAB5 /* SplashScreen.swift */,
+			);
+			path = SplashScreen;
+			sourceTree = "<group>";
+		};
+		1A1F9FCE21B3700F00A3CAB5 /* CodeView */ = {
+			isa = PBXGroup;
+			children = (
+				1A1F9FCF21B3702700A3CAB5 /* CodeView.swift */,
+			);
+			path = CodeView;
+			sourceTree = "<group>";
+		};
+		1A1F9FD121B3704200A3CAB5 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				1A1F9FD221B3705000A3CAB5 /* Coordinator.swift */,
+				1A1F9FD421B3706700A3CAB5 /* AppCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		1A1F9FD621B370A700A3CAB5 /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				1A1F9FD721B3714F00A3CAB5 /* DefaultContainer.swift */,
+				1A1F9FD921B3718F00A3CAB5 /* DefaultContainer+Views.swift */,
+			);
+			path = Container;
 			sourceTree = "<group>";
 		};
 		285FB0E0A107036C594A6EF0 /* Pods */ = {
@@ -173,6 +234,7 @@
 				1A1F9F8921B324F400A3CAB5 /* Sources */,
 				1A1F9F8A21B324F400A3CAB5 /* Frameworks */,
 				1A1F9F8B21B324F400A3CAB5 /* Resources */,
+				35F187AED32DE0E7A1D08F4F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -335,6 +397,30 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		35F187AED32DE0E7A1D08F4F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Movs/Pods-Movs-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Movs/Pods-Movs-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		EEC3BC474094DBCB77F9C82E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -365,7 +451,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A1F9F9921B324F400A3CAB5 /* Movs.xcdatamodeld in Sources */,
+				1A1F9FD821B3714F00A3CAB5 /* DefaultContainer.swift in Sources */,
+				1A1F9FCC21B3652300A3CAB5 /* SplashScreen.swift in Sources */,
+				1A1F9FDA21B3718F00A3CAB5 /* DefaultContainer+Views.swift in Sources */,
+				1A1F9FD321B3705000A3CAB5 /* Coordinator.swift in Sources */,
 				1A1F9F9121B324F400A3CAB5 /* AppDelegate.swift in Sources */,
+				1A1F9FD021B3702700A3CAB5 /* CodeView.swift in Sources */,
+				1A1F9FCA21B3648200A3CAB5 /* SplashView.swift in Sources */,
+				1A1F9FD521B3706700A3CAB5 /* AppCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
