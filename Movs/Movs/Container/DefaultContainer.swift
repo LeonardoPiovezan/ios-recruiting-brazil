@@ -20,4 +20,3 @@ final class DefaultContainer {
         self.registerServices()
     }
 }
-

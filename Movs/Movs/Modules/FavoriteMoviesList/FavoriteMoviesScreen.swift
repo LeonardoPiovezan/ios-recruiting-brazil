@@ -33,6 +33,4 @@ extension FavoriteMoviesScreen: CodeView {
     func setupAdditionalConfiguration() {
 
     }
-
-
 }

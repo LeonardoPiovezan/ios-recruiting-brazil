@@ -45,8 +45,7 @@ final class MoviesServiceImpl: MoviesService {
                         return Result.error(error: error)
                     }
                 }
-
-
+                
                 let error = MoviesError(message: "Request Failed with code: \(response.statusCode)")
                 return Result.error(error: error)
             }

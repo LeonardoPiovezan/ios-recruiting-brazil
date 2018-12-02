@@ -33,6 +33,4 @@ extension MoviesScreen: CodeView {
     func setupAdditionalConfiguration() {
 
     }
-
-
 }
