@@ -11,5 +11,13 @@ extension DefaultContainer {
         self.container.register(SplashView.self) { _ in
             SplashView()
         }
+        
+        self.container.register(MoviesView.self) { _ in
+            return MoviesView()
+        }
+        
+        self.container.register(FavoriteMoviesView.self) { _ in
+            return FavoriteMoviesView()
+        }
     }
 }

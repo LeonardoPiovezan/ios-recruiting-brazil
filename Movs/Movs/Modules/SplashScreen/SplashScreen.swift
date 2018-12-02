@@ -13,7 +13,7 @@ class SplashScreen: UIView {
 
     init() {
         super.init(frame: CGRect.zero)
-        self.backgroundColor = UIColor(red: 247/255, green: 206/255, blue: 91/255, alpha: 1.0)
+        self.backgroundColor = .movsYellow
         self.setupView()
     }
 
@@ -24,7 +24,7 @@ class SplashScreen: UIView {
     lazy var title: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Helvetica", size: 50)
-        label.textColor = UIColor(red: 45/255, green: 48/255, blue: 71/255, alpha: 1.0)
+        label.textColor = .movsDarkPurple
         return label
     }()
 

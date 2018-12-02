@@ -13,14 +13,42 @@ final class AppCoordinator: Coordinator {
     private let window: UIWindow
     private let container: Container
 
+    private let tabBarView: UITabBarController
+
     init(window: UIWindow,
          container: Container) {
         self.window = window
         self.container = container
+        self.tabBarView = UITabBarController(nibName: nil, bundle: nil)
     }
     
     func start() {
-        let splashView = container.resolve(SplashView.self)!
-        window.rootViewController = splashView
+//        let splashView = container.resolve(SplashView.self)!
+//        window.rootViewController = splashView
+
+        let moviesView = container.resolve(MoviesView.self)!
+        let favoriteMoviesView = container.resolve(FavoriteMoviesView.self)!
+        moviesView.tabBarItem = UITabBarItem(title: "Filmes", image: nil, tag: 0)
+        favoriteMoviesView.tabBarItem = UITabBarItem(title: "Favoritos", image: nil, tag: 0)
+        tabBarView.viewControllers = [moviesView, favoriteMoviesView]
+
+        window.rootViewController = self.tabBarView
+//        self.tabBarView.preloadAllTabs()
+    }
+}
+
+
+extension UITabBarController {
+    func preloadAllTabs() {
+        DispatchQueue.main.async {
+            for viewController in self.viewControllers ?? [] {
+                if let navigationVC = viewController as? UINavigationController,
+                    let rootVC = navigationVC.viewControllers.first {
+                    _ = rootVC.view
+                } else {
+                    _ = viewController.view
+                }
+            }
+        }
     }
 }
