@@ -12,8 +12,10 @@ extension DefaultContainer {
             SplashView()
         }
         
-        self.container.register(MoviesView.self) { _ in
-            return MoviesView()
+        self.container.register(MoviesView.self) { resolver in
+
+            let service = resolver.resolve(MoviesService.self)!
+            return MoviesView(service: service)
         }
         
         self.container.register(FavoriteMoviesView.self) { _ in

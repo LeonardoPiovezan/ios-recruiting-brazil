@@ -33,22 +33,5 @@ final class AppCoordinator: Coordinator {
         tabBarView.viewControllers = [moviesView, favoriteMoviesView]
 
         window.rootViewController = self.tabBarView
-//        self.tabBarView.preloadAllTabs()
-    }
-}
-
-
-extension UITabBarController {
-    func preloadAllTabs() {
-        DispatchQueue.main.async {
-            for viewController in self.viewControllers ?? [] {
-                if let navigationVC = viewController as? UINavigationController,
-                    let rootVC = navigationVC.viewControllers.first {
-                    _ = rootVC.view
-                } else {
-                    _ = viewController.view
-                }
-            }
-        }
     }
 }
