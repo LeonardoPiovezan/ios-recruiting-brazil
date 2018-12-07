@@ -8,12 +8,17 @@
 
 import UIKit
 import Moya
+import RxSwift
+import RxCocoa
 
 class MoviesView: UIViewController {
 
     let screen = MoviesScreen()
 
+    var viewModel: MoviesViewModel!
     private let service: MoviesService
+
+    private let disposeBag = DisposeBag()
 
     init(service: MoviesService) {
         self.service = service
@@ -26,19 +31,37 @@ class MoviesView: UIViewController {
 
     override func loadView() {
         self.view = screen
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.title = "Filmes do Poder"
+        let searchController = UISearchController(searchResultsController: nil)
+        self.navigationItem.searchController = searchController
+
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        self.setupViewModel()
+        self.setupBindings()
 
-        self.service.getMoviesGenre().subscribe(onSuccess: { (result) in
-            switch result {
-            case .success(let genres):
-                print(genres)
-            case .error(let error):
-                print(error)
-            }
-        })
+    }
 
+    func setupViewModel() {
+        self.viewModel = MoviesViewModel(service: self.service)
+    }
+
+    func setupBindings() {
+
+        self.screen.tableView.register(MoviesTableViewCell.self, forCellReuseIdentifier: "MoviesCell")
+       
+        self.viewModel.movies
+            .drive(self.screen.tableView
+                .rx.items(cellIdentifier: "MoviesCell", cellType: UITableViewCell.self)) { _, element, cell in
+                    cell.textLabel?.text = element.title
+        }.disposed(by: self.disposeBag)
+    }
+}
+
+extension UIScrollView {
+    func  isNearBottomEdge(edgeOffset: CGFloat = 20.0) -> Bool {
+        return self.contentOffset.y + self.frame.size.height + edgeOffset > self.contentSize.height
     }
 }
