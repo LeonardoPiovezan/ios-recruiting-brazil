@@ -30,7 +30,9 @@ final class AppCoordinator: Coordinator {
         let favoriteMoviesView = container.resolve(FavoriteMoviesView.self)!
         moviesView.tabBarItem = UITabBarItem(title: "Filmes", image: nil, tag: 0)
         favoriteMoviesView.tabBarItem = UITabBarItem(title: "Favoritos", image: nil, tag: 0)
-        tabBarView.viewControllers = [moviesView, favoriteMoviesView]
+
+        let navigationController = UINavigationController(rootViewController: moviesView)
+        tabBarView.viewControllers = [navigationController, favoriteMoviesView]
 
         window.rootViewController = self.tabBarView
     }

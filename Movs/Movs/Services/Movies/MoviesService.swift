@@ -10,5 +10,5 @@ import Moya
 
 protocol MoviesService {
     func getMoviesGenre() -> Single<Result<[Genre]>>
-    func getMovies(page: Int) -> Single<Response>
+    func getMovies(page: Int) -> Single<Result<[Movie]>>
 }

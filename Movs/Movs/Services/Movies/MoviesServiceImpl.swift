@@ -52,8 +52,21 @@ final class MoviesServiceImpl: MoviesService {
 
     }
 
-    func getMovies(page: Int) -> Single<Response> {
+    func getMovies(page: Int) -> Single<Result<[Movie]>> {
         return self.repository.getMovies(page: page)
+            .map { response in
+                if response.statusCode == 200 {
+                    do {
+                        let moviesResponse: MoviesResponse = try response.map(MoviesResponse.self)
+                        return Result.success(moviesResponse.results)
+                    } catch let error {
+                        return Result.error(error: error)
+                    }
+                }
+
+                let error = MoviesError(message: "Request Failed with code: \(response.statusCode)")
+                return Result.error(error: error)
+        }
     }
 
 }
