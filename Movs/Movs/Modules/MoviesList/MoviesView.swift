@@ -10,14 +10,21 @@ import UIKit
 import Moya
 import RxSwift
 import RxCocoa
+import Kingfisher
+import RxKingfisher
+
+protocol MoviesViewDelegate: class {
+    func showDetailsOf(movie: Movie)
+}
 
 class MoviesView: UIViewController {
 
     let screen = MoviesScreen()
 
     var viewModel: MoviesViewModel!
-    private let service: MoviesService
+    weak var delegate: MoviesViewDelegate?
 
+    private let service: MoviesService
     private let disposeBag = DisposeBag()
 
     init(service: MoviesService) {
@@ -41,7 +48,6 @@ class MoviesView: UIViewController {
         super.viewDidLoad()
         self.setupViewModel()
         self.setupBindings()
-
     }
 
     func setupViewModel() {
@@ -49,14 +55,25 @@ class MoviesView: UIViewController {
     }
 
     func setupBindings() {
-
-        self.screen.tableView.register(MoviesTableViewCell.self, forCellReuseIdentifier: "MoviesCell")
-       
         self.viewModel.movies
-            .drive(self.screen.tableView
-                .rx.items(cellIdentifier: "MoviesCell", cellType: UITableViewCell.self)) { _, element, cell in
-                    cell.textLabel?.text = element.title
-        }.disposed(by: self.disposeBag)
+            .drive(self.screen
+                .collectionView
+                .rx.items(cellIdentifier: "Cell", cellType: MovieCollectionViewCell.self)) { _, movie, cell in
+                cell.bind(movie: movie)
+            }
+            .disposed(by: self.disposeBag)
+
+        self.screen.collectionView.rx.modelSelected(Movie.self)
+            .asObservable()
+            .subscribe(onNext: { [weak self] movie in
+                self?.delegate?.showDetailsOf(movie: movie)
+            }).disposed(by: self.disposeBag)
+
+//        self.viewModel.movies
+//            .drive(self.screen.tableView
+//                .rx.items(cellIdentifier: "MoviesCell", cellType: UITableViewCell.self)) { _, element, cell in
+//                    cell.textLabel?.text = element.title
+//        }.disposed(by: self.disposeBag)
     }
 }
 

@@ -14,5 +14,9 @@ extension DefaultContainer {
             let repository = resolver.resolve(MoviesRepository.self)!
             return MoviesServiceImpl(repository: repository)
         }
+
+        self.container.register(ImageService.self) { resolver in
+            return KingFisherService()
+        }
     }
 }
