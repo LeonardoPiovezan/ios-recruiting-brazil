@@ -10,10 +10,16 @@ import UIKit
 
 class MoviesScreen: UIView {
 
-    lazy var tableView: UITableView = {
-        let tableView = UITableView(frame: CGRect.zero)
-        tableView.backgroundColor = .gray
-        return tableView
+    lazy var collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+
+        layout.scrollDirection = .vertical
+        let width = UIScreen.main.bounds.width/2 - 13
+        layout.itemSize = CGSize(width: width, height: width)
+        layout.minimumInteritemSpacing = 10
+        let collection = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+        collection.backgroundColor = .gray
+        return collection
     }()
 
     init() {
@@ -29,19 +35,20 @@ class MoviesScreen: UIView {
 
 extension MoviesScreen: CodeView {
     func buildViewHierarchy() {
-        self.addSubview(tableView)
+        self.addSubview(collectionView)
     }
 
     func setupConstraints() {
-        self.tableView.snp.makeConstraints { make in
-            make.leadingMargin.equalToSuperview()
-            make.trailing.equalToSuperview()
-            make.bottom.equalToSuperview()
-            make.top.equalToSuperview()
+
+        self.collectionView.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(8)
+            make.trailing.equalToSuperview().inset(8)
+            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom)
+            make.top.equalTo(safeAreaLayoutGuide.snp.top)
         }
     }
 
     func setupAdditionalConfiguration() {
-        
+     self.collectionView.register(MovieCollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
     }
 }

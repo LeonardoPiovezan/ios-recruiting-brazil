@@ -10,9 +10,15 @@ import UIKit
 
 class FavoriteMoviesScreen: UIView {
 
+    lazy var tableView: UITableView = {
+        let tableView = UITableView(frame: CGRect.zero)
+        tableView.backgroundColor = .gray
+        return tableView
+    }()
+    
     init() {
         super.init(frame: CGRect.zero)
-        self.backgroundColor = .blue
+        self.backgroundColor = .white
         self.setupView()
     }
 
@@ -23,11 +29,16 @@ class FavoriteMoviesScreen: UIView {
 
 extension FavoriteMoviesScreen: CodeView {
     func buildViewHierarchy() {
-
+        self.addSubview(self.tableView)
     }
 
     func setupConstraints() {
-
+        self.tableView.snp.makeConstraints { make in
+            make.leadingMargin.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom)
+            make.top.equalTo(safeAreaLayoutGuide.snp.top)
+        }
     }
 
     func setupAdditionalConfiguration() {

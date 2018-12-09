@@ -15,7 +15,7 @@ enum MoviesRouter {
 
 extension MoviesRouter: TargetType {
     var baseURL: URL {
-        return URL(string: "https://api.themoviedb.org/3")!
+        return URL(string: Constants.Network.baseURL)!
     }
 
     var path: String {
@@ -51,11 +51,11 @@ extension MoviesRouter: TargetType {
     var parameters: [String: Any]? {
         switch self {
         case .getMovies(let page):
-            return ["api_key": "1177a031b21e49e0ee7d6b61864d7209",
+            return ["api_key": Constants.APIKey.tmdb,
                     "language": "en-US",
                     "page": page]
         case .getMoviesGenres:
-            return ["api_key": "1177a031b21e49e0ee7d6b61864d7209",
+            return ["api_key": Constants.APIKey.tmdb,
                     "language": "en-US"]
         }
     }

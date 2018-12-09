@@ -30,7 +30,5 @@ class MoviesViewModel {
                 print(error)
             }
         }).disposed(by: disposeBag)
-
-
     }
 }

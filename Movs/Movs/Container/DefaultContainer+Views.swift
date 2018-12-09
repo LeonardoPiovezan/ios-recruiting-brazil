@@ -21,5 +21,10 @@ extension DefaultContainer {
         self.container.register(FavoriteMoviesView.self) { _ in
             return FavoriteMoviesView()
         }
+
+        self.container.register(MovieDetailsView.self) { resolver in
+            let service = resolver.resolve(ImageService.self)!
+            return MovieDetailsView(imageService: service)
+        }
     }
 }
