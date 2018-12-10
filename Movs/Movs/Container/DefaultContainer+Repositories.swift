@@ -17,6 +17,6 @@ extension DefaultContainer {
     }
 
     func getDefaultPlugins() -> [PluginType] {
-        return [NetworkLoggerPlugin(verbose: true)]
+        return [NetworkLoggerPlugin(verbose: false)]
     }
 }

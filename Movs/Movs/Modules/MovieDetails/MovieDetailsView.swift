@@ -16,6 +16,7 @@ final class MovieDetailsView: UIViewController {
     var viewModel: MovieDetailsViewModel!
 
     private let imageService: ImageService
+    private let moviesService: MoviesService
 
     private let disposeBag = DisposeBag()
     override func loadView() {
@@ -30,8 +31,9 @@ final class MovieDetailsView: UIViewController {
         self.setupBindings()
     }
 
-    init(imageService: ImageService) {
+    init(imageService: ImageService, moviesService: MoviesService) {
         self.imageService = imageService
+        self.moviesService = moviesService
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -39,7 +41,9 @@ final class MovieDetailsView: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     func setupViewModel() {
-        self.viewModel = MovieDetailsViewModel(movie: self.movie, imageService: self.imageService)
+        self.viewModel = MovieDetailsViewModel(movie: self.movie,
+                                               imageService: self.imageService,
+                                               moviesService: self.moviesService)
     }
 
     func setupBindings() {

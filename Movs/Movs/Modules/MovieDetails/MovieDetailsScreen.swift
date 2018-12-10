@@ -21,11 +21,13 @@ class MovieDetailsScreen: UIView, CodeView {
 
     lazy var titleLabel: UILabel = {
         let label = UILabel(frame: CGRect.zero)
+        label.numberOfLines = 0
         return label
     }()
 
     lazy var genreLabel: UILabel = {
         let label = UILabel(frame: CGRect.zero)
+        label.numberOfLines = 0
         return label
     }()
 

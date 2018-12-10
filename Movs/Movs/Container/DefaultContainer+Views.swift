@@ -23,8 +23,10 @@ extension DefaultContainer {
         }
 
         self.container.register(MovieDetailsView.self) { resolver in
-            let service = resolver.resolve(ImageService.self)!
-            return MovieDetailsView(imageService: service)
+            let imageService = resolver.resolve(ImageService.self)!
+            let moviesService = resolver.resolve(MoviesService.self)!
+            return MovieDetailsView(imageService: imageService,
+                                    moviesService: moviesService)
         }
     }
 }
