@@ -45,6 +45,10 @@
 		1A1FA01A21BCAE5D00A3CAB5 /* MovieCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1FA01921BCAE5D00A3CAB5 /* MovieCollectionViewModel.swift */; };
 		1A1FA01D21BCBC1F00A3CAB5 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1FA01C21BCBC1F00A3CAB5 /* ImageService.swift */; };
 		1A1FA01F21BCBD5C00A3CAB5 /* KingFisherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1FA01E21BCBD5C00A3CAB5 /* KingFisherService.swift */; };
+		1A1FA02721C1C75900A3CAB5 /* MovieDetailsViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1FA02621C1C75900A3CAB5 /* MovieDetailsViewModelSpec.swift */; };
+		1A1FA02B21C1CD8500A3CAB5 /* MockImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1FA02A21C1CD8500A3CAB5 /* MockImageService.swift */; };
+		1A1FA02D21C1D01F00A3CAB5 /* MockMovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1FA02C21C1D01F00A3CAB5 /* MockMovieService.swift */; };
+		1A1FA02F21C1DB0B00A3CAB5 /* MoviesViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1FA02E21C1DB0A00A3CAB5 /* MoviesViewModelSpec.swift */; };
 		C19850F17149268A36C5249F /* Pods_MovsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8661C5D02A93394D55BF9DC /* Pods_MovsUITests.framework */; };
 		D2FDE3A3AB2799DD9688441E /* Pods_MovsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833E3099FF682CFBD7371C3B /* Pods_MovsTests.framework */; };
 		FE1D1894748524791773629D /* Pods_Movs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE57AC28B50DF802A07B8C94 /* Pods_Movs.framework */; };
@@ -113,6 +117,10 @@
 		1A1FA01921BCAE5D00A3CAB5 /* MovieCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewModel.swift; sourceTree = "<group>"; };
 		1A1FA01C21BCBC1F00A3CAB5 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 		1A1FA01E21BCBD5C00A3CAB5 /* KingFisherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingFisherService.swift; sourceTree = "<group>"; };
+		1A1FA02621C1C75900A3CAB5 /* MovieDetailsViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewModelSpec.swift; sourceTree = "<group>"; };
+		1A1FA02A21C1CD8500A3CAB5 /* MockImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockImageService.swift; sourceTree = "<group>"; };
+		1A1FA02C21C1D01F00A3CAB5 /* MockMovieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMovieService.swift; sourceTree = "<group>"; };
+		1A1FA02E21C1DB0A00A3CAB5 /* MoviesViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewModelSpec.swift; sourceTree = "<group>"; };
 		460F816F5D02E3576B8082AF /* Pods-MovsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MovsTests/Pods-MovsTests.release.xcconfig"; sourceTree = "<group>"; };
 		4CDEAD492B76C658C350F181 /* Pods-Movs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Movs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Movs/Pods-Movs.debug.xcconfig"; sourceTree = "<group>"; };
 		631B436E98C0941CD7447B80 /* Pods-MovsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MovsUITests/Pods-MovsUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -197,6 +205,8 @@
 		1A1F9FA721B324F800A3CAB5 /* MovsTests */ = {
 			isa = PBXGroup;
 			children = (
+				1A1FA02821C1CD6B00A3CAB5 /* Mock */,
+				1A1FA02321C1C5E500A3CAB5 /* Modules */,
 				1A1F9FA821B324F800A3CAB5 /* MovsTests.swift */,
 				1A1F9FAA21B324F800A3CAB5 /* Info.plist */,
 			);
@@ -395,6 +405,48 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
+		1A1FA02321C1C5E500A3CAB5 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				1A1FA02521C1C66D00A3CAB5 /* MovieDetails */,
+				1A1FA02421C1C64F00A3CAB5 /* MoviesList */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		1A1FA02421C1C64F00A3CAB5 /* MoviesList */ = {
+			isa = PBXGroup;
+			children = (
+				1A1FA02E21C1DB0A00A3CAB5 /* MoviesViewModelSpec.swift */,
+			);
+			path = MoviesList;
+			sourceTree = "<group>";
+		};
+		1A1FA02521C1C66D00A3CAB5 /* MovieDetails */ = {
+			isa = PBXGroup;
+			children = (
+				1A1FA02621C1C75900A3CAB5 /* MovieDetailsViewModelSpec.swift */,
+			);
+			path = MovieDetails;
+			sourceTree = "<group>";
+		};
+		1A1FA02821C1CD6B00A3CAB5 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				1A1FA02921C1CD7100A3CAB5 /* Service */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		1A1FA02921C1CD7100A3CAB5 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				1A1FA02A21C1CD8500A3CAB5 /* MockImageService.swift */,
+				1A1FA02C21C1D01F00A3CAB5 /* MockMovieService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		285FB0E0A107036C594A6EF0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -449,6 +501,7 @@
 				1A1F9FA021B324F800A3CAB5 /* Sources */,
 				1A1F9FA121B324F800A3CAB5 /* Frameworks */,
 				1A1F9FA221B324F800A3CAB5 /* Resources */,
+				B57873A97A32018E7F13F907 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -650,6 +703,38 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Movs/Pods-Movs-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		B57873A97A32018E7F13F907 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MovsTests/Pods-MovsTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
+				"${BUILT_PRODUCTS_DIR}/RxNimble/RxNimble.framework",
+				"${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxNimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxTest.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MovsTests/Pods-MovsTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		EEC3BC474094DBCB77F9C82E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -720,7 +805,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A1FA02D21C1D01F00A3CAB5 /* MockMovieService.swift in Sources */,
 				1A1F9FA921B324F800A3CAB5 /* MovsTests.swift in Sources */,
+				1A1FA02721C1C75900A3CAB5 /* MovieDetailsViewModelSpec.swift in Sources */,
+				1A1FA02F21C1DB0B00A3CAB5 /* MoviesViewModelSpec.swift in Sources */,
+				1A1FA02B21C1CD8500A3CAB5 /* MockImageService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

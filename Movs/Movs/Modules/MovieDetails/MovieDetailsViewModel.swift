@@ -52,7 +52,8 @@ final class MovieDetailsViewModel {
         self.date = movieObservable.map { $0.release_date }
             .asDriver(onErrorJustReturn: "")
 
-        moviesService.getMoviesGenre().subscribe(onSuccess: { [weak self] result in
+        moviesService.getMoviesGenre()
+            .subscribe(onSuccess: { [weak self] result in
             switch result {
             case .success(let genreArray):
                 self?.genreSubject.onNext(genreArray)

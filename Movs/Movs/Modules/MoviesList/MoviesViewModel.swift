@@ -19,7 +19,13 @@ class MoviesViewModel {
 
         let moviesResult = service.getMovies(page: 1)
 
-        self.movies = moviesSuccess.asDriver(onErrorJustReturn: [])
+        let movie = Movie(id: 0,
+                          title: "Avengers",
+                          poster_path: nil,
+                          genre_ids: [1, 2, 3],
+                          release_date: "28-10-2018",
+                          overview: "Filme bacana")
+        self.movies = moviesSuccess.asDriver(onErrorJustReturn: [movie])
 
         moviesResult
             .subscribe(onSuccess: { [weak self] result in
