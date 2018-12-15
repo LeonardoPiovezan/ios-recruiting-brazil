@@ -1,0 +1,9 @@
+//
+//  FavoriteMoviesViewModel.swift
+//  Movs
+//
+//  Created by Leonardo Piovezan on 12/12/18.
+//  Copyright © 2018 Leonardo Piovezan. All rights reserved.
+//
+
+import Foundation
