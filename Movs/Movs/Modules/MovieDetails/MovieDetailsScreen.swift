@@ -62,14 +62,19 @@ class MovieDetailsScreen: UIView, CodeView {
 
     func setupConstraints() {
         self.scrollableView.snp.makeConstraints { make in
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
-            make.top.equalTo(safeAreaLayoutGuide.snp.top)
+            make.leading.equalToSuperview().offset(16)
+            make.trailing.equalToSuperview().inset(16)
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(16)
             make.bottom.equalToSuperview()
+        }
+
+        self.imageView.snp.makeConstraints { make in
+            make.height.equalTo(self.snp.height).multipliedBy(0.35)
         }
     }
 
     func setupAdditionalConfiguration() {
         self.backgroundColor = .white
+        self.scrollableView.stackView.spacing = 8
     }
 }

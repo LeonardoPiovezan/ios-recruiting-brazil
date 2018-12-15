@@ -18,13 +18,13 @@ class MoviesScreen: UIView {
         layout.itemSize = CGSize(width: width, height: width)
         layout.minimumInteritemSpacing = 10
         let collection = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-        collection.backgroundColor = .gray
+        collection.backgroundColor = .white
         return collection
     }()
 
     init() {
         super.init(frame: CGRect.zero)
-        self.backgroundColor = . movsDarkPurple
+        self.backgroundColor = .white
         self.setupView()
     }
 
@@ -44,7 +44,7 @@ extension MoviesScreen: CodeView {
             make.leading.equalToSuperview().offset(8)
             make.trailing.equalToSuperview().inset(8)
             make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom)
-            make.top.equalTo(safeAreaLayoutGuide.snp.top)
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(8)
         }
     }
 

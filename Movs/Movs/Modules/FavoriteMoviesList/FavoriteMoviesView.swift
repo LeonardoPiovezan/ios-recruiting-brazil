@@ -7,17 +7,35 @@
 //
 
 import UIKit
+import RxSwift
 
 class FavoriteMoviesView: UIViewController {
 
-    let screen = FavoriteMoviesScreen()
+    private let screen = FavoriteMoviesScreen()
+    private var viewModel: FavoriteMoviesViewModel!
+    private let disposeBag = DisposeBag()
+
     override func loadView() {
         self.view = screen
+        self.title = "Favoritos"
+        self.navigationController?.navigationBar.barTintColor = .movsYellow
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupViewModel()
+        self.setupBindings()
+    }
 
-        // Do any additional setup after loading the view.
+    func setupViewModel() {
+        self.viewModel = FavoriteMoviesViewModel()
+    }
+    
+    func setupBindings() {
+        self.viewModel.movies
+            .drive(self.screen.tableView
+                .rx.items(cellIdentifier: "MoviesCell", cellType: MoviesTableViewCell.self)) { _, element, cell in
+                    cell.textLabel?.text = element.title
+            }.disposed(by: self.disposeBag)
     }
     
 }

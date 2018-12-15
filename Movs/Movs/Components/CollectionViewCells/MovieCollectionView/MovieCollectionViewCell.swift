@@ -15,6 +15,7 @@ final class MovieCollectionViewCell: UICollectionViewCell {
         label.textAlignment = .center
         label.numberOfLines = 0
         label.adjustsFontSizeToFitWidth = true
+        label.textColor = .movsYellow
         return label
     }()
 
@@ -83,6 +84,6 @@ extension MovieCollectionViewCell: CodeView {
     }
 
     func setupAdditionalConfiguration() {
-        self.backgroundColor = .red
+        self.backgroundColor = .movsDarkPurple
     }
 }

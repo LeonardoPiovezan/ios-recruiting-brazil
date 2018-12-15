@@ -25,4 +25,8 @@ extension UIColor {
     @nonobjc class var movsDarkPurple: UIColor {
         return UIColor(r: 45, g: 48, b: 71)
     }
+
+    @nonobjc class var movsLightGray: UIColor {
+        return UIColor(r: 216, g: 216, b: 216)
+    }
 }

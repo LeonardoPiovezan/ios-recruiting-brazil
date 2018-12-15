@@ -12,7 +12,7 @@ class FavoriteMoviesScreen: UIView {
 
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: CGRect.zero)
-        tableView.backgroundColor = .gray
+        tableView.backgroundColor = .white
         return tableView
     }()
     
@@ -42,6 +42,8 @@ extension FavoriteMoviesScreen: CodeView {
     }
 
     func setupAdditionalConfiguration() {
+        self.tableView.register(MoviesTableViewCell.self, forCellReuseIdentifier: "MoviesCell")
+        self.backgroundColor = .white
 
     }
 }

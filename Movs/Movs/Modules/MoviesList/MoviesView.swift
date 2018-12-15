@@ -38,10 +38,11 @@ class MoviesView: UIViewController {
 
     override func loadView() {
         self.view = screen
-        self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.title = "Filmes do Poder"
-        let searchController = UISearchController(searchResultsController: nil)
-        self.navigationItem.searchController = searchController
+        self.title = "Filmes"
+//        let searchController = UISearchController(searchResultsController: nil)
+//        self.navigationItem.searchController = searchController
+
+        self.navigationController?.navigationBar.barTintColor = .movsYellow
 
     }
     override func viewDidLoad() {
@@ -68,12 +69,6 @@ class MoviesView: UIViewController {
             .subscribe(onNext: { [weak self] movie in
                 self?.delegate?.showDetailsOf(movie: movie)
             }).disposed(by: self.disposeBag)
-
-//        self.viewModel.movies
-//            .drive(self.screen.tableView
-//                .rx.items(cellIdentifier: "MoviesCell", cellType: UITableViewCell.self)) { _, element, cell in
-//                    cell.textLabel?.text = element.title
-//        }.disposed(by: self.disposeBag)
     }
 }
 

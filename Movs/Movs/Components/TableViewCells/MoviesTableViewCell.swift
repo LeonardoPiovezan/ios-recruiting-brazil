@@ -9,16 +9,59 @@
 import UIKit
 
 class MoviesTableViewCell: UITableViewCell {
+    lazy var movieImageView: UIImageView = {
+        let imageView = UIImageView(frame: CGRect.zero)
+        imageView.contentMode = .scaleToFill
+        return imageView
+    }()
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    lazy var descriptionView: MovieDescriptionView = {
+        let view = MovieDescriptionView()
+        view.backgroundColor = .movsLightGray
+        return view
+    }()
+
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.setupView()
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.setupView()
+    }
+}
 
-        // Configure the view for the selected state
+extension MoviesTableViewCell: CodeView {
+    func buildViewHierarchy() {
+        self.addSubview(self.movieImageView)
+        self.addSubview(self.descriptionView)
+    }
+
+    func setupConstraints() {
+        self.movieImageView.snp.makeConstraints({ make in
+            make.height.equalTo(100)
+            make.width.equalTo(100)
+            make.left.equalToSuperview()
+            make.bottom.equalToSuperview()
+            make.top.equalToSuperview()
+        })
+
+        self.descriptionView.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.bottom.equalToSuperview()
+            make.left.equalTo(self.movieImageView.snp.right)
+            make.right.equalToSuperview()
+        }
+    }
+
+    func setupAdditionalConfiguration() {
+        self.movieImageView.image = UIImage(named: "movie")
+        self.descriptionView.titleLabel.text = "Natuto"
+        self.descriptionView.descriptionLabel.text = "Adoro narutinho do meu coracao mais texo"
     }
 
 }

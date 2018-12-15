@@ -16,6 +16,7 @@ final class AppCoordinator: Coordinator {
     private let tabBarView: UITabBarController
 
     private var navigationController: UINavigationController!
+    private var favoriteNavigationController: UINavigationController!
     init(window: UIWindow,
          container: Container) {
         self.window = window
@@ -30,13 +31,17 @@ final class AppCoordinator: Coordinator {
         let moviesView = self.container.resolve(MoviesView.self)!
         moviesView.delegate = self
         let favoriteMoviesView = self.container.resolve(FavoriteMoviesView.self)!
-        moviesView.tabBarItem = UITabBarItem(title: "Filmes", image: nil, tag: 0)
-        favoriteMoviesView.tabBarItem = UITabBarItem(title: "Favoritos", image: nil, tag: 0)
+        moviesView.tabBarItem = UITabBarItem(title: "Filmes",
+                                             image: UIImage(named: "list_icon"), tag: 0)
+        favoriteMoviesView.tabBarItem = UITabBarItem(title: "Favoritos",
+                                                     image: UIImage(named: "favorite_empty_icon"), tag: 0)
 
         self.navigationController = UINavigationController(rootViewController: moviesView)
-        tabBarView.viewControllers = [self.navigationController,
-                                      favoriteMoviesView]
+        self.favoriteNavigationController = UINavigationController(rootViewController: favoriteMoviesView)
+        self.tabBarView.viewControllers = [self.navigationController,
+                                      self.favoriteNavigationController]
 
+        self.tabBarView.tabBar.barTintColor = .movsYellow
         window.rootViewController = self.tabBarView
     }
 }
